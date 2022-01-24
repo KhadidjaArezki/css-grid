@@ -10,14 +10,14 @@
 
 <body>
   <div class="container">
-    <div class="item item1">
+    <div class="item left-sidebar">
       <p>I'm Sidebar #1</p>
     </div>
-    <div class="item item2">
+    <div class="item main">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, sed.</p>
       <p>Lorem ipsum d</p>
     </div>
-    <div class="item item3">
+    <div class="item right-sidebar">
       <p>I'm Sidebar #2</p>
     </div>
     <div class="item footer">
@@ -29,6 +29,33 @@
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 25vh 50vh 25vh;
+      grid-template-areas: 
+        "left-sidebar main    right-sidebar"
+        "left-sidebar main    right-sidebar"
+        "footer       footer  footer";      
+    }
+    .footer {
+      grid-area: footer;
+    }
+    .main {
+      grid-area: main;
+    }
+    .left-sidebar {
+      grid-area: left-sidebar;
+    }
+    .right-sidebar {
+      grid-area: right-sidebar;
+    }
+
+    @media screen and (max-width: 700px){
+      .container {
+        grid-template-areas: 
+          "main  main   right-sidebar"
+          "main  main   left-sidebar"
+          "footer       footer  footer";
+      } 
     }
   </style>
 </body>

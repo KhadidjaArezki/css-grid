@@ -1,3 +1,7 @@
+:root {
+  --grey: #343436;
+}
+
 html {
   box-sizing: border-box;
   font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
@@ -31,4 +35,100 @@ h6 {
   font-weight: normal;
   margin: 0;
   font-size: 1.5em;
+}
+
+.codepen {
+  display: grid;
+  /* grid-template-columns: 1fr; */
+  grid-template-rows: auto 1fr 1fr auto;
+  min-height: 100vh;
+  color: white;
+}
+.pen {
+  background: #000000f2;
+  color: white;
+  padding: .7em;
+  display: grid;
+  gap: .8em;
+  grid-template-columns: 1fr repeat(5, auto);
+  /* grid-auto-flow: column; */
+  align-items: center;
+}
+
+button {
+  background: #343436;
+  color: white;
+  padding: .6em;
+  font-size: .95em;
+  border: 0;
+  border-radius: .5em;
+  position: relative;
+}
+
+.button-dirty:before {
+  background: #ffc600;
+  display: block;
+  height: .15em;
+  width: calc(100% - 6px);
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+
+.pen_author {
+  margin: 0;
+  font-size: small;
+}
+.code {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .9em;
+  background: var(--grey);
+  padding: 0 7px;
+}
+
+.editor {
+  margin: 2px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: #1b2b34;
+}
+
+.editor_header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: .4em;
+  padding: .4em;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  /* justify-content: space-evenly; */
+}
+
+.editor button {
+  padding: 4px;
+  font-size: 12px;
+}
+
+.editor_code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.editor_input {
+  background: inherit;
+  border: 0;
+  color: grey;
+  font-size: 16px;
+}
+
+.editor_number {
+  display: block;
+  padding: 0 10px;
+}
+
+.settings {
+  background:#000000f2;
+  padding: 7px;
+  font-size: 12px;
 }

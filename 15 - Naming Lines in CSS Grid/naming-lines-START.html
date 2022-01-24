@@ -46,8 +46,13 @@
     .container {
       display: grid;
       grid-gap: 20px;
-      grid-template-columns: 1fr 500px 1fr;
-      grid-template-rows: repeat(10, auto);
+      grid-template-columns: [left] 1fr [content-start] 2fr [content-end] 1fr [right];
+      grid-template-rows: [top] repeat(10, auto) [bottom];
+    }
+    .item3 {
+      background: palegoldenrod;
+      grid-column: content;
+      grid-row: top / bottom;
     }
   </style>
 </body>

@@ -102,6 +102,20 @@
   </div>
 
   <script>
+    const menuButton = document.querySelector('button[aria-expanded]')
+    const open = document.querySelector('button[aria-expanded] .open')
+    const close = document.querySelector('button[aria-expanded] .close')
+
+    menuButton.addEventListener('click', ({target}) => {
+      open.classList.toggle('open')
+      close.classList.toggle('open')
+      close.classList.toggle('close')
+      open.classList.toggle('close')
+
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      menuButton.setAttribute('aria-expanded', !expanded);
+
+    })
   </script>
   
 </body>
